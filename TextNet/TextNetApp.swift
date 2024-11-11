@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+// firebase dodawany
 @main
 struct TextNetApp: App {
     var body: some Scene {
