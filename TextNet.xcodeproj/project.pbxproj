@@ -36,6 +36,7 @@
 		6A67182C2CE8D712002FB019 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 6A67182B2CE8D712002FB019 /* FirebaseStorageCombine-Community */; };
 		6A67182E2CE8D712002FB019 /* FirebaseVertexAI in Frameworks */ = {isa = PBXBuildFile; productRef = 6A67182D2CE8D712002FB019 /* FirebaseVertexAI */; };
 		6A6718302CE8DEBC002FB019 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A67182F2CE8DEBC002FB019 /* GoogleService-Info.plist */; };
+		6A6718362CE8E3E2002FB019 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6718352CE8E3E2002FB019 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		6A6717F42CE8CA5C002FB019 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A6717F72CE8CA5C002FB019 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6A67182F2CE8DEBC002FB019 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6A6718352CE8E3E2002FB019 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +103,14 @@
 		6A6717EF2CE8CA5B002FB019 /* TextNet */ = {
 			isa = PBXGroup;
 			children = (
-				6A67182F2CE8DEBC002FB019 /* GoogleService-Info.plist */,
+				6A6718332CE8E1BA002FB019 /* Views */,
+				6A6718322CE8E1A5002FB019 /* ViewModels */,
+				6A6717F62CE8CA5C002FB019 /* Preview Content */,
+				6A6718312CE8E0C1002FB019 /* Models */,
 				6A6717F02CE8CA5B002FB019 /* TextNetApp.swift */,
 				6A6717F22CE8CA5B002FB019 /* ContentView.swift */,
 				6A6717F42CE8CA5C002FB019 /* Assets.xcassets */,
-				6A6717F62CE8CA5C002FB019 /* Preview Content */,
+				6A67182F2CE8DEBC002FB019 /* GoogleService-Info.plist */,
 			);
 			path = TextNet;
 			sourceTree = "<group>";
@@ -116,6 +121,36 @@
 				6A6717F72CE8CA5C002FB019 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6A6718312CE8E0C1002FB019 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6A6718322CE8E1A5002FB019 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6A6718332CE8E1BA002FB019 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6A6718342CE8E3C5002FB019 /* Authentication */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6A6718342CE8E3C5002FB019 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				6A6718352CE8E3E2002FB019 /* LoginView.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A6718362CE8E3E2002FB019 /* LoginView.swift in Sources */,
 				6A6717F32CE8CA5B002FB019 /* ContentView.swift in Sources */,
 				6A6717F12CE8CA5B002FB019 /* TextNetApp.swift in Sources */,
 			);
