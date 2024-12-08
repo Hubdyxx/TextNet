@@ -50,7 +50,8 @@ struct LoginView: View {
 
                 
                 NavigationLink {
-                    Text("Registration View")
+                    RegistrationView()
+                        .navigationBarBackButtonHidden(true)
                 } label: {
                     HStack{
                         Text("New here?")

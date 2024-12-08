@@ -12,6 +12,7 @@ struct RegistrationView: View {
     @State private var password = ""
     @State private var fullname = ""
     @State private var username = ""
+    @Environment(\.dismiss) var dismiss
     var body: some View {
         VStack {
             
@@ -48,8 +49,8 @@ struct RegistrationView: View {
                 Divider()
                 
                 Button{
-                    
-                }label: {
+                    dismiss()
+                } label: {
                     HStack{
                         Text("Already have an account?")
                         Text("Sign in!")
