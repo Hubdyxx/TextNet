@@ -9,7 +9,30 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        Text("home")
+        NavigationStack {
+            ScrollView(showsIndicators: false) {
+                LazyVStack {
+                    ForEach(0 ... 20, id: \.self) { post in
+                        HomePostView()
+                    }
+                }
+            }
+            .refreshable {
+                print("Refreshing...")
+            }
+            .navigationTitle("TextNet")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "arrow.counterclockwise")
+                            .foregroundColor(.black)
+                    }
+                }
+            }
+        }
     }
 }
 
