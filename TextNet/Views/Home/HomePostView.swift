@@ -72,7 +72,7 @@ struct HomePostView: View {
             }
             Divider()
         }
-        .padding()
+        .padding(.top)
     }
 }
 
