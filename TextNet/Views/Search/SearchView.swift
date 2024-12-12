@@ -15,7 +15,7 @@ struct SearchView: View {
                 LazyVStack{
                     ForEach(0 ... 10, id: \.self) { user in
                         VStack {
-                            UserCell()
+                            UserCellView()
                             
                             Divider()
                         }

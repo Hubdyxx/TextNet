@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct UserCell: View {
+struct UserCellView: View {
     var body: some View {
         HStack {
             Image(systemName: "person")
@@ -39,5 +39,5 @@ struct UserCell: View {
     }
 }
 #Preview {
-    UserCell()
+    UserCellView()
 }
