@@ -50,6 +50,7 @@
 		6ADBC1F32D077C570050426D /* ProfilePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADBC1F22D077C570050426D /* ProfilePictureView.swift */; };
 		6ADBC1F52D077D140050426D /* UserCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADBC1F42D077D140050426D /* UserCellView.swift */; };
 		6ADBC1F82D0B72710050426D /* ProfilePostFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADBC1F72D0B72710050426D /* ProfilePostFilter.swift */; };
+		6ADBC1FA2D0F44670050426D /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADBC1F92D0F44670050426D /* EditProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		6ADBC1F22D077C570050426D /* ProfilePictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePictureView.swift; sourceTree = "<group>"; };
 		6ADBC1F42D077D140050426D /* UserCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellView.swift; sourceTree = "<group>"; };
 		6ADBC1F72D0B72710050426D /* ProfilePostFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePostFilter.swift; sourceTree = "<group>"; };
+		6ADBC1F92D0F44670050426D /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				6ADBC1ED2D0627310050426D /* ProfileView.swift */,
+				6ADBC1F92D0F44670050426D /* EditProfileView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A6718362CE8E3E2002FB019 /* LoginView.swift in Sources */,
+				6ADBC1FA2D0F44670050426D /* EditProfileView.swift in Sources */,
 				6ADBC1F32D077C570050426D /* ProfilePictureView.swift in Sources */,
 				6ADBC1E52D06256F0050426D /* SearchView.swift in Sources */,
 				6A89E5742CFBA3100049BF48 /* TextFieldModifier.swift in Sources */,
