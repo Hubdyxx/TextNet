@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TabBarView: View {
     @State private var selectedTab = 0
-    
+    @State private var showCreatePostView = false
     var body: some View {
         TabView(selection: $selectedTab) {
             HomeView()
@@ -47,6 +47,14 @@ struct TabBarView: View {
                 .tag(4)
                 
         }
+        .onChange(of: selectedTab, perform: { newValue in
+            showCreatePostView = selectedTab == 2
+        })
+        .sheet(isPresented: $showCreatePostView, onDismiss: {
+            selectedTab = 0
+        }, content: {
+            PostCreatorView()
+        })
         .tint(.black)
     }
 }
