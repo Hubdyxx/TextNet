@@ -8,7 +8,8 @@
 import Foundation
 
 enum ProfilePostFilter: Int, CaseIterable, Identifiable {
-    case posts 
+    
+    case posts
     case replies
     
     var title: String {
