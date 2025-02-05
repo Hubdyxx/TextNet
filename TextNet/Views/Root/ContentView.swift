@@ -8,11 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var viewModel = ContentViewModel()
     var body: some View {
-        VStack {
-            HomeView()
+        Group{
+            if viewModel.userSession != nil{
+                TabBarView()
+            } else {
+                LoginView()
+            }
         }
-        .padding()
     }
 }
 
