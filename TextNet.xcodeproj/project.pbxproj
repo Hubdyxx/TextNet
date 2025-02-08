@@ -55,6 +55,9 @@
 		6ADBC2072D4FEA410050426D /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADBC2062D4FEA410050426D /* AuthService.swift */; };
 		6ADBC20B2D53ED320050426D /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADBC20A2D53ED320050426D /* ContentViewModel.swift */; };
 		6ADBC20F2D54026D0050426D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADBC20E2D54026D0050426D /* LoginViewModel.swift */; };
+		6ADBC2112D57EEED0050426D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADBC2102D57EEED0050426D /* User.swift */; };
+		6ADBC2142D57FAD20050426D /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADBC2132D57FAD20050426D /* UserService.swift */; };
+		6ADBC2162D5802600050426D /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADBC2152D5802600050426D /* ProfileViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +86,9 @@
 		6ADBC2062D4FEA410050426D /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		6ADBC20A2D53ED320050426D /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		6ADBC20E2D54026D0050426D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		6ADBC2102D57EEED0050426D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		6ADBC2132D57FAD20050426D /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		6ADBC2152D5802600050426D /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +145,7 @@
 		6A6717EF2CE8CA5B002FB019 /* TextNet */ = {
 			isa = PBXGroup;
 			children = (
+				6ADBC2122D57FAB80050426D /* Services */,
 				6ADBC20C2D53F8AC0050426D /* App */,
 				6ADBC2042D4FEA110050426D /* AuthServices */,
 				6ADBC1F12D077C330050426D /* Components */,
@@ -164,6 +171,7 @@
 		6A6718312CE8E0C1002FB019 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6ADBC2102D57EEED0050426D /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -275,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				6ADBC1F72D0B72710050426D /* ProfilePostFilter.swift */,
+				6ADBC2152D5802600050426D /* ProfileViewModel.swift */,
 			);
 			path = ProfileViewViewModel;
 			sourceTree = "<group>";
@@ -325,6 +334,14 @@
 				6ADBC20E2D54026D0050426D /* LoginViewModel.swift */,
 			);
 			path = LoginViewViewModel;
+			sourceTree = "<group>";
+		};
+		6ADBC2122D57FAB80050426D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6ADBC2132D57FAD20050426D /* UserService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -433,10 +450,13 @@
 				6ADBC1F32D077C570050426D /* ProfilePictureView.swift in Sources */,
 				6ADBC20B2D53ED320050426D /* ContentViewModel.swift in Sources */,
 				6ADBC1E52D06256F0050426D /* SearchView.swift in Sources */,
+				6ADBC2162D5802600050426D /* ProfileViewModel.swift in Sources */,
 				6A89E5742CFBA3100049BF48 /* TextFieldModifier.swift in Sources */,
+				6ADBC2142D57FAD20050426D /* UserService.swift in Sources */,
 				6ADBC2072D4FEA410050426D /* AuthService.swift in Sources */,
 				6ADBC1EC2D06270D0050426D /* NotificationsView.swift in Sources */,
 				6ADBC1F02D062F8D0050426D /* HomePostView.swift in Sources */,
+				6ADBC2112D57EEED0050426D /* User.swift in Sources */,
 				6ADBC1EE2D0627310050426D /* ProfileView.swift in Sources */,
 				6ADBC1DF2CFCE6DE0050426D /* TabBarView.swift in Sources */,
 				6ADBC1F52D077D140050426D /* UserCellView.swift in Sources */,

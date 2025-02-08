@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @StateObject var viewModel = ProfileViewModel()
     @State private var selectedFilter: ProfilePostFilter = .posts
     @Namespace var animation
+    
+    private var filterBarWidth: CGFloat {
+        let count = CGFloat(ProfilePostFilter.allCases.count)
+        return UIScreen.main.bounds.width / count - 16
+    }
     var body: some View {
         NavigationStack {
             ScrollView(showsIndicators: false) {
@@ -85,18 +91,21 @@ struct ProfileView: View {
                     .padding(.vertical, 8)
                 }
             }
-
-        }
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button{
-                    AuthService.shared.signOut()
-                } label: {
-                    Image(systemName: "line.3.horizontal")
+            
+            
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button{
+                        AuthService.shared.signOut()
+                    } label: {
+                        Image(systemName: "line.3.horizontal")
+                            .foregroundColor(.black)
+                    
+                    }
                 }
             }
+            .padding(.horizontal)
         }
-        .padding(.horizontal)
     }
 }
 
