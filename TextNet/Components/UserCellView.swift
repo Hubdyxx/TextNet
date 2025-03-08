@@ -8,18 +8,19 @@
 import SwiftUI
 
 struct UserCellView: View {
+    
+    let user: User
+    let testPreview = TestPreview()
+
     var body: some View {
         HStack {
-            Image(systemName: "person")
-                .resizable()
-                .frame(width: 40,height: 40)
-                .clipShape(Circle())
+            ProfilePictureView()
             
-            VStack(alignment: .leading){
-                Text("user1")
+            VStack(alignment: .leading, spacing: 2){
+                Text(user.username)
                     .fontWeight(.semibold)
                 
-                Text("Anonymous 1")
+                Text(user.fullName)
                 
             }
             .font(.footnote)
@@ -39,5 +40,7 @@ struct UserCellView: View {
     }
 }
 #Preview {
-    UserCellView()
+    UserCellView(user: TestPreview.shared.user)
 }
+
+
