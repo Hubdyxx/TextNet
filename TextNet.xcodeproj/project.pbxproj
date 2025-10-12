@@ -65,6 +65,8 @@
 		6ADBC2142D57FAD20050426D /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADBC2132D57FAD20050426D /* UserService.swift */; };
 		6ADBC2162D5802600050426D /* CurrentUserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADBC2152D5802600050426D /* CurrentUserProfileViewModel.swift */; };
 		6ADBC21A2D5946550050426D /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADBC2192D5946550050426D /* SearchViewModel.swift */; };
+		6AE5ED862E981F7100828729 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE5ED852E981F6800828729 /* ResetPasswordView.swift */; };
+		6AE5ED882E981FA100828729 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE5ED872E981F9700828729 /* ResetPasswordViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +105,8 @@
 		6ADBC2132D57FAD20050426D /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		6ADBC2152D5802600050426D /* CurrentUserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserProfileViewModel.swift; sourceTree = "<group>"; };
 		6ADBC2192D5946550050426D /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		6AE5ED852E981F6800828729 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
+		6AE5ED872E981F9700828729 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +198,7 @@
 		6A6718322CE8E1A5002FB019 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				6AE5ED872E981F9700828729 /* ResetPasswordViewModel.swift */,
 				6AC83BFC2D8DC2160022B28F /* EditProfileViewViewModel */,
 				6ADBC2182D5945270050426D /* SearchViewModel */,
 				6ADBC20D2D5402360050426D /* LoginViewViewModel */,
@@ -222,6 +227,7 @@
 		6A6718342CE8E3C5002FB019 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				6AE5ED852E981F6800828729 /* ResetPasswordView.swift */,
 				6A6718352CE8E3E2002FB019 /* LoginView.swift */,
 				6A89E5702CFB5A0F0049BF48 /* RegistrationView.swift */,
 			);
@@ -492,7 +498,9 @@
 				6A6718362CE8E3E2002FB019 /* LoginView.swift in Sources */,
 				6ADBC2022D4FE3420050426D /* RegistrationViewModel.swift in Sources */,
 				6ADBC1FA2D0F44670050426D /* EditProfileView.swift in Sources */,
+				6AE5ED862E981F7100828729 /* ResetPasswordView.swift in Sources */,
 				6AC83C002D8DC5AC0022B28F /* PhotoUploader.swift in Sources */,
+				6AE5ED882E981FA100828729 /* ResetPasswordViewModel.swift in Sources */,
 				6ADBC1F32D077C570050426D /* ProfilePictureView.swift in Sources */,
 				6ADBC20B2D53ED320050426D /* ContentViewModel.swift in Sources */,
 				6ADBC1E52D06256F0050426D /* SearchView.swift in Sources */,

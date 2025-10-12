@@ -48,6 +48,16 @@ class AuthService {
     }
     
     @MainActor
+    func resetPassword(withEmail email: String) async throws {
+        do {
+            try await Auth.auth().sendPasswordReset(withEmail: email)
+        } catch {
+            print("Failed to send password reset email: \(error.localizedDescription)")
+            throw error
+        }
+    }
+    
+    @MainActor
     private func uploadUserData(
         withEmail email: String,
         fullname: String,
