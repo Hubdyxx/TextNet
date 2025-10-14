@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct TabBarView: View {
     @State private var selectedTab = 0
     @State private var showCreatePostView = false
+    @StateObject private var notificationsViewModel = NotificationsViewModel()
+    
     var body: some View {
         TabView(selection: $selectedTab) {
             HomeView()
@@ -33,8 +36,20 @@ struct TabBarView: View {
                 .tag(2)
             NotificationsView()
                 .tabItem {
-                    Image(systemName: selectedTab == 3 ? "heart.fill" : "heart")
-                        .environment(\.symbolVariants, selectedTab == 3 ? .fill : .none)
+                    ZStack {
+                        Image(systemName: selectedTab == 3 ? "heart.fill" : "heart")
+                            .environment(\.symbolVariants, selectedTab == 3 ? .fill : .none)
+                        
+                        if notificationsViewModel.unreadCount > 0 {
+                            Text("\(notificationsViewModel.unreadCount)")
+                                .font(.caption2)
+                                .foregroundColor(.white)
+                                .frame(width: 16, height: 16)
+                                .background(Color.red)
+                                .clipShape(Circle())
+                                .offset(x: 8, y: -8)
+                        }
+                    }
                 }
                 .onAppear { selectedTab = 3 }
                 .tag(3)
@@ -47,15 +62,23 @@ struct TabBarView: View {
                 .tag(4)
                 
         }
-        .onChange(of: selectedTab, perform: { newValue in
-            showCreatePostView = selectedTab == 2
-        })
+        .onChange(of: selectedTab) { oldValue, newValue in
+            showCreatePostView = newValue == 2
+        }
         .sheet(isPresented: $showCreatePostView, onDismiss: {
             selectedTab = 0
         }, content: {
             PostCreatorView()
         })
         .tint(.black)
+        .task {
+            await notificationsViewModel.fetchUnreadCount()
+        }
+        .onReceive(Timer.publish(every: 30, on: .main, in: .common).autoconnect()) { _ in
+            Task {
+                await notificationsViewModel.fetchUnreadCount()
+            }
+        }
     }
 }
 

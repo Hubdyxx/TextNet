@@ -43,8 +43,8 @@ struct UserContentListView: View {
                 }
             }
             LazyVStack{
-                ForEach(0 ... 10, id: \.self) { post in
-                    HomePostView()
+                ForEach(0 ... 10, id: \.self) { index in
+                    HomePostView(post: Post(ownerId: "sample", content: "Sample post \(index)", timestamp: .init()))
                 }
             }
         }

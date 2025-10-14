@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct PostCreatorView: View {
-    @State private var post = ""
+    @StateObject private var viewModel = PostCreatorViewModel()
     @Environment(\.dismiss) var dismiss
+    
     var body: some View {
         NavigationStack{
             VStack{
@@ -17,17 +18,22 @@ struct PostCreatorView: View {
                     ProfilePictureView()
                     
                     VStack(alignment: .leading, spacing: 4) {
-                        Text("user")
-                            .fontWeight(.semibold)
-                        TextField("Tell us something...", text: $post, axis: .vertical)
+                        if let currentUser = UserService.shared.currentUser {
+                            Text(currentUser.username)
+                                .fontWeight(.semibold)
+                        } else {
+                            Text("user")
+                                .fontWeight(.semibold)
+                        }
+                        TextField("Tell us something...", text: $viewModel.postContent, axis: .vertical)
                     }
                     .font(.footnote)
                     
                     Spacer()
                     
-                    if !post.isEmpty {
+                    if !viewModel.postContent.isEmpty {
                         Button{
-                            post=""
+                            viewModel.clearPost()
                         } label: {
                             Image(systemName: "xmark")
                                 .resizable()
@@ -36,7 +42,15 @@ struct PostCreatorView: View {
                         }
                     }
                 }
-                 Spacer()
+                
+                if let errorMessage = viewModel.errorMessage {
+                    Text(errorMessage)
+                        .foregroundColor(.red)
+                        .font(.caption)
+                        .padding(.top, 8)
+                }
+                
+                Spacer()
             }
             .padding()
             .navigationTitle("New Post")
@@ -48,16 +62,30 @@ struct PostCreatorView: View {
                     }
                     .font(.subheadline)
                     .foregroundColor(.black)
+                    .disabled(viewModel.isLoading)
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Post"){
-                        
+                        Task {
+                            if await viewModel.createPost() {
+                                dismiss()
+                            }
+                        }
                     }
                     .font(.subheadline)
                     .fontWeight(.semibold)
-                    .foregroundColor(.black)
+                    .foregroundColor(viewModel.isPostButtonEnabled ? .black : .gray)
+                    .disabled(!viewModel.isPostButtonEnabled)
                 }
                 
+            }
+            .overlay {
+                if viewModel.isLoading {
+                    ProgressView()
+                        .scaleEffect(1.5)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .background(Color.black.opacity(0.1))
+                }
             }
         }
     }
